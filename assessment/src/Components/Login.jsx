@@ -65,7 +65,6 @@ export default function Login({user, setUser}) {
                 <Form.Label>Username/Email</Form.Label>
                 <Form.Control required type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)}/>
             </Form.Group>
-            <br></br>
             <Form.Group controlId='password'>
                 <Form.Label>Password</Form.Label>
                 <InputGroup hasValidation>
