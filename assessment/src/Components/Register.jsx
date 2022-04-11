@@ -8,7 +8,7 @@ export default function Register({user, setUser}) {
     const navigate = useNavigate();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
+    const [confirmPassword] = useState("");
     const [email, setEmail] = useState("");
     const [redirect, setRedirect] = useState(false);
     const [error, setError] = useState("");

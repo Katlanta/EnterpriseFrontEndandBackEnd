@@ -104,4 +104,29 @@ router.post('/logout', function (req, res) {
   });
 });
 
+router.delete('/delete', async function (req, res) {
+  if (!req.session.user) return res.send(false);
+
+  const user = await User.findById(req.session.user);
+
+  if (!user) return res.send(false);
+
+  await User.findByIdAndDelete(req.session.user);
+  req.session.destroy();
+  return res.send(true);
+});
+
+router.post('/setEmail', async function(req, res) {
+  const { email } = req.body;
+
+  if (!req.session.user) return res.send({success: false, error: 'You are not logged in'});
+
+  if (!validator.validate(email)) return res.send({success: false, error: 'Invalid email'});
+
+  const user = await User.findById(req.session.user);
+  user.email = email;
+  await user.save();
+  return res.send({user, success: true});
+})
+
 module.exports = router;

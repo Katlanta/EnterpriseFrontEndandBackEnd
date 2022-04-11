@@ -4,7 +4,7 @@ import '../Styles/Comments.css';
 function Comments() {
   return (
     <div>
-      <img src="../Images/cmt.png" />
+      
     </div>
   )
 }
