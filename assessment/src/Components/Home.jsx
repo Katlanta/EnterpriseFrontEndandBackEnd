@@ -5,24 +5,26 @@ import { Button,} from 'react-bootstrap';
 
 function Home() {
     return(
-        <div className='background'>
-            <div className='text'>
-                <br></br>
-                <h1 className='text'>Love For The Uglies</h1>
-                <h2 className='text'>We are a non profit charity built around giving less fortunate looking animals a shot in the limelight!</h2>
-                <h2 className='text'>Explore what our website has to offer below!</h2>
-                    <Link to="/Login">
-                        <Button variant="flat" size="lg">Login</Button>
-                    </Link>
-                    <Link to="/Register">
-                        <Button variant="flat" size='lg'>Register</Button>
-                    </Link>
-                    <Link to="/Events">        
-                        <Button variant="flat" size='lg'>Events</Button>
-                    </Link>    
-                    <Link to="/Comments">    
-                        <Button  variant="flat" size="lg" className="bbg">Comments</Button>
-                    </Link>    
+        <div className='bbg'>
+            <div className='background'>
+                <div className='text'>
+                    <br></br>
+                    <h1 className='text'>Love For The Uglies</h1>
+                    <h2 className='text'>We are a non profit charity built around giving less fortunate looking animals a shot in the limelight!</h2>
+                    <h2 className='text'>Explore what our website has to offer below!</h2>
+                        <Link to="/Login">
+                            <Button size="lg" >Login</Button>
+                        </Link>
+                        <Link to="/Register">
+                            <Button  size="lg" >Register</Button>
+                        </Link>
+                        <Link to="/Events">        
+                            <Button size="lg" >Events</Button>
+                        </Link>    
+                        <Link to="/Comments">    
+                            <Button size="lg" >Comments</Button>
+                        </Link>    
+                </div>
             </div>
         </div>
     )
