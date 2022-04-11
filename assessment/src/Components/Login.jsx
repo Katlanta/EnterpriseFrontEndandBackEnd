@@ -58,7 +58,7 @@ export default function Login({user, setUser}) {
         }
     };
 
-    return  <Form noValidate style={{maxWidth: "400px", padding: "20px", boxShadow: "2px 2px 5px 5px rgba(0,0,0,0.5)", borderRadius: "5px", margin:"20px auto"}} validated={validated} onSubmit={handleSubmit}>
+    return  <Form noValidate style={{maxWidth: "400px", padding: "20px", margin:"20px auto"}} validated={validated} onSubmit={handleSubmit}>
         {error && <div style={{color: "red"}}>{error}</div>}
         <Row className="mb-3">
             <Form.Group controlId='username'>
@@ -74,6 +74,6 @@ export default function Login({user, setUser}) {
                 </InputGroup>
             </Form.Group>
         </Row>
-        <Button type="submit" variant="flat" size="lg" className="bbg">Login</Button>
+        <Button type="submit"size="lg">Login</Button>
     </Form>;
 }

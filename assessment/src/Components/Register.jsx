@@ -64,41 +64,19 @@ export default function Register({user, setUser}) {
             <Form.Group controlId="validationCustom01">
                 <Form.Label>Username</Form.Label>
                 <Form.Control required type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)}/>
-                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                <Form.Control.Feedback>Accepted</Form.Control.Feedback>
             </Form.Group>
             <Form.Group controlId="validationCustom02">
                 <Form.Label>Email</Form.Label>
                 <Form.Control required type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}
                 />
-                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                <Form.Control.Feedback>Accepted</Form.Control.Feedback>
             </Form.Group>
-            <Form.Group as={Col} md="6" controlId="validationCustomUsername">
+            <Form.Group md="6" controlId="validationCustomUsername">
                 <Form.Label>Password</Form.Label>
                 <InputGroup hasValidation>
-                    <Form.Control
-                        type="password"
-                        placeholder="Password"
-                        required
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                    />
-                    <Form.Control.Feedback type="invalid">
-                        Please enter a password.
-                    </Form.Control.Feedback>
-                </InputGroup>
-            </Form.Group>
-            <Form.Group as={Col} md="6" controlId="validationCustomUsername">
-                <Form.Label>Confirm Password</Form.Label>
-                <InputGroup hasValidation>
-                    <Form.Control
-                        type="password"
-                        placeholder="Confirm password"
-                        required
-                        value={confirmPassword}
-                        onChange={(e) => setConfirmPassword(e.target.value)}/>
-                    <Form.Control.Feedback type="invalid">
-                        Please confirm your password.
-                    </Form.Control.Feedback>
+                    <Form.Control type="password" placeholder="Password" required value={password} onChange={(e) => setPassword(e.target.value)}/>
+                    <Form.Control.Feedback type="invalid"> Please enter a password </Form.Control.Feedback>
                 </InputGroup>
             </Form.Group>
         </Row>
