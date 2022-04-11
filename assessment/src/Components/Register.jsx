@@ -58,28 +58,17 @@ export default function Register({user, setUser}) {
         }
     };
 
-    return <Form noValidate style={{maxWidth: "600px", padding: "20px", boxShadow: "2px 2px 5px 5px rgba(0,0,0,0.5)", borderRadius: "5px", margin:"20px auto"}} validated={validated} onSubmit={handleSubmit}>
+    return <Form noValidate style={{maxWidth: "600px", padding: "20px", margin:"20px auto"}} validated={validated} onSubmit={handleSubmit}>
         {error && <div style={{color: "red"}}>{error}</div>}
         <Row className="mb-3">
             <Form.Group controlId="validationCustom01">
                 <Form.Label>Username</Form.Label>
-                <Form.Control
-                    required
-                    type="text"
-                    placeholder="Username"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                />
+                <Form.Control required type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)}/>
                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
             </Form.Group>
             <Form.Group controlId="validationCustom02">
                 <Form.Label>Email</Form.Label>
-                <Form.Control
-                    required
-                    type="email"
-                    placeholder="Email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                <Form.Control required type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}
                 />
                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
             </Form.Group>
@@ -106,8 +95,7 @@ export default function Register({user, setUser}) {
                         placeholder="Confirm password"
                         required
                         value={confirmPassword}
-                        onChange={(e) => setConfirmPassword(e.target.value)}
-                    />
+                        onChange={(e) => setConfirmPassword(e.target.value)}/>
                     <Form.Control.Feedback type="invalid">
                         Please confirm your password.
                     </Form.Control.Feedback>

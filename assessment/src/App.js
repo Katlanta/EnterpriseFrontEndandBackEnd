@@ -17,9 +17,8 @@ function App() {
       <Headers/>
       <BrowserRouter>
       <Routes>
-        
         <Route path='/' exact element={<Home/>}/>
-        <Route path='/Login' element={<Login/>}/>
+        <Route path='/Login' element={<Login user={user} setUser={setUser}/>}/>
         <Route path='/Events' element={<Events/>}/>
         <Route path='/Comments' element={<Comments/>}/>
         <Route path='/Profile' element={<Profile user={user} setUser={setUser}/>}/>

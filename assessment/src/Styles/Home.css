@@ -25,9 +25,10 @@
     background-color: #bc8de3;
     color: white;
 }
-
-.btn-flat {
-    background-color: purple;
-    color: white;
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited{
+    background-color: #bc8de3 !important;
+    border-color: #b58de3 !important;
 }
-
+.btn{
+    margin-right: 12px;
+}

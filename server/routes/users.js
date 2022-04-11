@@ -11,7 +11,7 @@ router.post('/login', async function (req, res) {
   const { username, password } = req.body;
 
   if (!username || !password) {
-    res.send({
+    return res.send({
       success: false,
       error: 'Please provide a username and password'
     });
@@ -20,7 +20,7 @@ router.post('/login', async function (req, res) {
   const user = await User.findOne({ $or: [{username}, {email: username}] });
 
   if (!user) {
-    res.send({
+    return res.send({
       success: false,
       error: 'Invalid username or password'
     });
@@ -29,7 +29,7 @@ router.post('/login', async function (req, res) {
   const validPassword = bcryptjs.compareSync(password,user.password);
 
   if (!validPassword) {
-    res.send({
+    return res.send({
       success: false,
       error: 'Invalid username or password'
     });
@@ -37,7 +37,7 @@ router.post('/login', async function (req, res) {
 
   req.session.user = user._id;
 
-  res.send({
+  return res.send({
     success: true,
     user: user,
     message: 'You have successfully logged in',
@@ -98,7 +98,7 @@ router.post('/register', async function (req, res) {
 
 router.post('/logout', function (req, res) {
   req.session.destroy();
-  res.send({
+  return res.send({
     success: true,
     message: 'You have successfully logged out'
   });
