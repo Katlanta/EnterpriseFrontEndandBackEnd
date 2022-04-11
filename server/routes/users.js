@@ -3,6 +3,9 @@ var router = express.Router();
 const User = require('../models/userSchema');
 const bcryptjs = require('bcryptjs');
 const validator = require('email-validator');
+const app = require('../app');
+
+
 
 router.post('/login', async function (req, res) {
   const { username, password } = req.body;
@@ -84,7 +87,7 @@ router.post('/register', async function (req, res) {
   });
 
   await newUser.save();
-  req.session.user = user._id;
+  req.session.user = newUser._id;
   
   res.json({
     success: true,
