@@ -55,7 +55,7 @@ router.post('/submit', async (req, res) => {
     const user = await User.findById(req.session.user);
 
     if (!user)  return res.json({ success: false, message: 'You must be logged in to contribute' });
-    if (!comment) return res.json({ success: false, message: 'Please add some text to your comment' });
+    if (!text) return res.json({ success: false, message: 'Please add some text to your comment' });
 
     try {
         const newComment = new Comments({
@@ -72,7 +72,7 @@ router.post('/submit', async (req, res) => {
             comment: newComment
         })
     } catch (err) {
-        return res.json({ success: false, message: err.message });
+        return res.json({ success: false, message: err.toString() });
     }
 });
 

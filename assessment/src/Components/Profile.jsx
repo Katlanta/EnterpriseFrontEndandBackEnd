@@ -1,20 +1,20 @@
 //Standard Imports!
 import React from 'react'
-import {Button,Form,FormGroup} from "react-bootstrap";
+import {Button,Form} from "react-bootstrap";
 import axios from 'axios'
 import {useEffect, useState} from "react";
 
 function Profile({user}) {
-  const [email, setEmail] = useState(second)
+  const [email, setEmail] = useState()
 
-  const handleOnSubmitName = async () => {
+  const handleOnSubmitName = async (e) => {
     e.preventDefault();
-    axios.post(REACT_APP_API_URL+`users/setEmail?email=${name}`).then((res)=>{(console.log(res));});  
+    axios.post(process.env.REACT_APP_API_URL+`users/setEmail`, {email: email}).then((res)=>{(console.log(res));});  
   }
 
   const handleDeleteAccount = async (e) =>{
     e.preventDefault();
-    axios.delete(REACT_APP_API_URL+`users/delete`).then((res)=>{(console.log(res));});  
+    axios.delete(process.env.REACT_APP_API_URL+`users/delete`).then((res)=>{(console.log(res));});  
 }
   return (
     <div>

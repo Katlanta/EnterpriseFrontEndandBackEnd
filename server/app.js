@@ -15,9 +15,10 @@ var commentRouter = require('./routes/comment');
 
 var app = express();
 
+const corsConfig = {credentials: true, origin: 'http://localhost:3000'};
 
-app.use(cors())
-app.options('*',cors())
+app.use(cors(corsConfig))
+app.options('*',cors(corsConfig))
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
