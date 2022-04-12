@@ -2,7 +2,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var cors = require('cors')
+var cors = require('cors');
 
 const session = require('express-session');
 
@@ -11,6 +11,7 @@ global.db = mongoose.createConnection(process.env.MONGO_URL);
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var commentRouter = require('./routes/comment');
 
 var app = express();
 
@@ -31,5 +32,6 @@ app.use(session({
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/commentData', commentRouter);
 
 module.exports = app;
