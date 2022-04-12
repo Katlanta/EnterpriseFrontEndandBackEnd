@@ -8,7 +8,12 @@ import { Button} from 'react-bootstrap';
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //Super basic buttons and background for the home page, nothing fancy
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-function Home() {
+function Home({user,setUser}) {
+
+    const handleLogOut = (e) => {
+        e.preventDefault();
+        setUser(false)
+      };
     return(
         <div className='bbg'>
             <div className='background'>
@@ -18,18 +23,27 @@ function Home() {
                     <h2 className='text'>We are a non profit charity built around giving less fortunate looking animals a shot in the limelight!</h2>
                     <h2 className='text'>Explore what our website has to offer below!</h2>
                     {/*Linked up buttons to redirect where stated*/}
-                        <Link to="/Login">
-                            <Button size="lg" >Login</Button>
-                        </Link>
-                        <Link to="/Register">
-                            <Button  size="lg" >Register</Button>
-                        </Link>
+                        {
+                        !user
+                        ? <><Link to="/Login">
+                                                    <Button size="lg">Login</Button>
+                                                </Link>
+                                                <Link to="/Register">
+                                                    <Button  size="lg">Register</Button>
+                                                </Link></>
+                        : null
+                        }
                         <Link to="/Events">        
-                            <Button size="lg" >Events</Button>
+                            <Button size="lg">Events</Button>
                         </Link>    
                         <Link to="/Comments">    
-                            <Button size="lg" >Comments</Button>
-                        </Link>    
+                            <Button size="lg">Comments</Button>
+                        </Link>  
+                        {
+                        user
+                        ? <Button size="lg" onClick={(e) => handleLogOut(e)}>Log out</Button>
+                        : null
+                        }  
                 </div>
             </div>
         </div>

@@ -52,7 +52,7 @@ function Comments({user}) {
             {comment.text}
           </Card.Text>
           {
-            user._id ===comment.userId
+            user._id ===comment.userId || user.isAdmin
             ?<Card.Link onClick={(e) => handleDelete(comment)}>Delete</Card.Link>
             :null
           }

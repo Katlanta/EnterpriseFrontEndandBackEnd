@@ -2,6 +2,7 @@
 import React from 'react'
 import { Container, Nav, Navbar, Offcanvas} from 'react-bootstrap'
 import '../Styles/Headers.css';
+import {Link} from 'react-router-dom'
 
 
 //Here we have a basic bootstrap header! Nothing too exciting yet :)
