@@ -23,6 +23,7 @@ function Home({user,setUser}) {
                     <h2 className='text'>We are a non profit charity built around giving less fortunate looking animals a shot in the limelight!</h2>
                     <h2 className='text'>Explore what our website has to offer below!</h2>
                     {/*Linked up buttons to redirect where stated*/}
+                        {/*Conditionally rendering the appropriate buttons!*/}
                         {
                         !user
                         ? <><Link to="/Login">
@@ -39,6 +40,7 @@ function Home({user,setUser}) {
                         <Link to="/Comments">    
                             <Button size="lg">Comments</Button>
                         </Link>  
+                        {/*Logout Button*/}
                         {
                         user
                         ? <Button size="lg" onClick={(e) => handleLogOut(e)}>Log out</Button>
